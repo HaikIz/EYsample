@@ -1,4 +1,15 @@
 EySample::Application.routes.draw do
+  devise_for :users
+  root  'static_pages#home'
+  match '/help',    to: 'static_pages#help',    via: 'get'
+  match '/about',   to: 'static_pages#about',   via: 'get'
+
+ 
+  get "static_pages/home"
+  get "static_pages/help"
+  get "static_pages/about"
+  get "static_pages/no_signin"
+  get "static_pages/need_siginin"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
